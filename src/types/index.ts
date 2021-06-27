@@ -8,5 +8,5 @@ interface IHeader {
 }
 
 interface IRows {
-    [key: string]: string
+    [key: string]: any
 }

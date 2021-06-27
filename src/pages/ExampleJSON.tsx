@@ -1,18 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { ITable } from "../types";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import Button from '@material-ui/core/Button';
 
-const ExampleJSON: React.FC = () => {
-    const [data, setData] = useState<ITable | {}>({})
-    
-    useEffect(() => {
-        fetch('./data.json')
-        .then(res => res.json())
-        .then(table => setData(table.data))
-        .catch(e => console.log(e))
-    }, [])
+import data from '../data.json';
 
+const ExampleJSON: React.FC = () => {
     return (
         <div className="Example">
             <NavLink to='/' className="link">

@@ -8,6 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import '../styles/Main.scss';
+import dataJSON from '../data.json';
 
 const instanceOfInterface = (object: any): object is ITable => 'header' in object && 'rows' in object;
 
@@ -62,7 +63,7 @@ const MainPage: React.FC = () => {
             <NavLink to='/example' className="link">
                 <Button variant="contained">Example JSON</Button>
             </NavLink>
-            <Button variant="contained" color="primary" onClick={() => handleClickAddTable('./data.json')}>Example Table</Button>
+            <Button variant="contained" color="primary" onClick={() => setData([...data, dataJSON.data])}>Example Table</Button>
             {data.map((item, idx) => {
                 if (item.hasOwnProperty('header') && item.hasOwnProperty('rows')) {
                     return (
