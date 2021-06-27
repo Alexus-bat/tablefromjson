@@ -1,0 +1,61 @@
+@import './variables.scss';
+
+.table-wrapper {
+	max-width: 600px;
+	overflow: auto;
+	height: 100vh;
+
+	&::-webkit-scrollbar {
+		width: .5rem;
+	}
+	&::-webkit-scrollbar-track {
+		box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: darkgrey;
+		border-radius: 10px;
+	}
+}
+
+table {
+    margin: 1rem!important;
+	border: none;
+	margin-bottom: 20px;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+table thead th {
+    position: sticky;
+    top: 0;
+	font-weight: bold;
+	text-align: left;
+	border: none;
+	padding: 10px 15px;
+	background: #d8d8d8;
+	font-size: 14px;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+}
+
+table tbody td {
+	text-align: left;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	padding: 10px 15px;
+	font-size: 14px;
+	vertical-align: top;
+}
+
+table thead tr th:first-child, table tbody tr td:first-child {
+	border-left: none;
+}
+
+table thead tr th:last-child, table tbody tr td:last-child {
+	border-right: none;
+}
+
+table tbody tr:nth-child(even){
+	background: #f3f3f3;
+}
+
